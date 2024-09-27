@@ -55,9 +55,7 @@ jobs:
           chromedriver-version: '129.0.6668.58'
 
       - name: Run Test
-          run: |
-            export PIPELINE=github_actions
-            mvn -q test || true
+        run: mvn test
 
       - name: Test Report
         uses: actions/upload-artifact@v4
