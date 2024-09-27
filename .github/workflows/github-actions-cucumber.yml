@@ -62,7 +62,7 @@ jobs:
         if: always()
         with:
           name: report-test
-          path: 'target/report-builder'
+          path: './target/report-builder'
 
   deploy:
     name: Deploy GitHub Pages 🌐
