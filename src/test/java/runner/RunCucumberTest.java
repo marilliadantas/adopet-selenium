@@ -54,7 +54,7 @@ public class RunCucumberTest {
         reportBuilder.setAdditionalInfo("Environment", "HML");
         reportBuilder.setAdditionalInfo("Browser", "N/A");
         reportBuilder.setAdditionalInfo("Url", "https://adopet-tau.vercel.app/");
-        reportBuilder.setAdditionalInfo("Runtime", "N/A");
+//        reportBuilder.setAdditionalInfo("Runtime", "N/A");
         reportBuilder.build(cucumberJsonReports);
     }
 }

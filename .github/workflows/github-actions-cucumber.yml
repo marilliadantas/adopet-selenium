@@ -55,7 +55,7 @@ jobs:
           chromedriver-version: '129.0.6668.58'
 
       - name: Run Test
-        run: mvn test
+        run: mvn test -Dheadless=true
 
       - name: Test Report
         uses: actions/upload-artifact@v4
