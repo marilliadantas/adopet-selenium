@@ -25,7 +25,7 @@ public class BrowserFactory {
     }
 
     public static WebDriver getBrowser() {
-        if (driver == null)  return getBrowser(Browser.CHROME);
+        if (driver == null)  return getBrowser(Browser.CHROME_HEADLESS);
         return driver;
     }
 

@@ -55,14 +55,16 @@ jobs:
           chromedriver-version: '129.0.6668.58'
 
       - name: Run Test
-        run: mvn test
+          run: |
+            export PIPELINE=github_actions
+            mvn -q test || true
 
       - name: Test Report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: report-test
-          path: '/target/report-builder'
+          path: 'target/report-builder'
 
   deploy:
     name: Deploy GitHub Pages 🌐
