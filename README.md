@@ -1,4 +1,4 @@
-<h1 align="center"> PROJETO AUTOMAÇÃO - SELENIUM E CUCUMBER</h1>
+<h1 align="center"> FRONTEND AUTOMATION PROJECT </h1>
 
 ![STATUS](https://img.shields.io/static/v1?label=STATUS&message=%20PROGRESS&color=GREEN&style=for-the-badge)
 
@@ -27,7 +27,7 @@ Run the tests using the following command.
 mvn test
 ```
 
-### ✔️ Running tests with scenario name
+### ✔️ Project structure
 ```
 .
 ├── README.md                     # Main project documentation
