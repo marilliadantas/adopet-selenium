@@ -17,7 +17,7 @@ import java.util.List;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    tags = "@register",
+    tags = "@register-success",
     features = "src/test/resources/features",	            // Path: features = "classpath:features"
     glue = "steps",					                        // Path: Steps
     monochrome = false,							            // Cores no Terminal default: false
@@ -38,8 +38,6 @@ public class RunCucumberTest {
 
     @AfterClass
     public static void AfterAllTest() {
-        BaseSteps.CloseBrowser();
-
         // Report-Builder
         List<Object> cucumberJsonReports = new ArrayList<>();
         ReportBuilder reportBuilder = new ReportBuilder();

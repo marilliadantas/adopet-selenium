@@ -10,6 +10,7 @@ public class RegisterPage extends BasePage {
     private By inputPassword = By.id("pass-create");
     private By inputConfirmPass = By.id("pass-confirm");
     private By btnRegister = By.cssSelector("button[type=\"submit\"]");
+    private By msgError = By.cssSelector("p[class=\"error\"]");
 
     public void accessPageRegister() {
         visitPage(url);
@@ -33,5 +34,10 @@ public class RegisterPage extends BasePage {
 
     public void clickBtnRegister() {
         click(btnRegister);
+    }
+
+    public String msgError() {
+        waitElementVisible(msgError, 10);
+        return getValueByText(msgError);
     }
 }

@@ -10,6 +10,7 @@ import java.util.Date;
 
 public class BaseSteps extends BrowserFactory { ;
     public static Scenario scenario;
+    public static boolean closeBrowser = true;
 
     public static void OpenBrowser() {
         if (getBrowser() != null);

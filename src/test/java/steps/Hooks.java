@@ -6,6 +6,7 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
 import static base.BaseSteps.screenshot;
+import static support.BrowserFactory.killDriver;
 
 public class Hooks {
     @Before
@@ -18,5 +19,7 @@ public class Hooks {
         if (BaseSteps.scenario.isFailed()) {
             screenshot();
         }
+        if (BaseSteps.closeBrowser)
+            killDriver();
     }
 }
