@@ -3,6 +3,7 @@ package steps;
 import base.BaseSteps;
 import base.Utils;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import pages.LoginPage;
 import pages.RegisterPage;
 
@@ -32,7 +33,7 @@ public class RegisterSteps extends BaseSteps {
 
     @Then("the user is redirected to the login page")
     public void theUserIsRedirectedToTheLoginPage() {
-        pageLogin.validateLoginPage();
+        Assert.assertTrue(pageLogin.validateLoginPage("https://adopet-tau.vercel.app/login"));
         screenshot();
     }
 

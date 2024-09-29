@@ -28,4 +28,8 @@ public class BasePage extends BrowserFactory {
     public String getValueByText(By locator){
         return getBrowser().findElement(locator).getText();
     }
+
+    public String getCurrentUrl() {
+        return getBrowser().getCurrentUrl();
+    }
 }
