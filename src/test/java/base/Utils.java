@@ -14,7 +14,6 @@ public class Utils extends BrowserFactory {
     }
 
     public static String getRandomEmail() {
-
         String email_int = "qateste_";
         String email_final = "@qazando.com.br";
 
