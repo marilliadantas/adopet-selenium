@@ -1,0 +1,16 @@
+<configuration>
+    <root level="ERROR">
+    </root>
+
+    <logger name="ch.qos.logback" level="ERROR"/>
+    <logger name="io.github.bonigarcia.wdm" level="WARN"/>
+
+    <!-- Se precisar do ConsoleAppender, descomente a seção abaixo -->
+    <!--
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    -->
+</configuration>

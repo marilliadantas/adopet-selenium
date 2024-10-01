@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.logging.Level;
@@ -33,6 +32,7 @@ public class BrowserFactory {
     public static WebDriver getBrowser(Browser nav) {
         ChromeOptions chromeOptions;
         FirefoxOptions firefoxOptions;
+
         Logger.getLogger("org.openqa.selenium").setLevel(Level.SEVERE);
 
         switch (nav) {
@@ -48,7 +48,7 @@ public class BrowserFactory {
                 System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
                 WebDriverManager.chromedriver().setup();
                 chromeOptions = createChromeOptions();
-                chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless=old");
                 driver = new ChromeDriver(chromeOptions);
                 break;
 
@@ -56,6 +56,7 @@ public class BrowserFactory {
                 WebDriverManager.firefoxdriver().setup();
                 firefoxOptions = createFirefoxOptions();
                 driver = new FirefoxDriver(firefoxOptions);
+                driver.manage().window().maximize();
                 break;
 
             case FIREFOX_HEADLESS:
@@ -88,17 +89,7 @@ public class BrowserFactory {
     }
     private static FirefoxOptions createFirefoxOptions() {
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--lang=pt-BR");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-crash-reporter");
-        options.addArguments("--disable-extensions");
-        options.addArguments("--disable-in-process-stack-traces");
-        options.addArguments("--disable-logging");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--disable-notifications");
-        options.addArguments("--log-level=3");
-        options.addArguments("--output=/dev/null");
-        options.addArguments("--window-size=1920,1080");
+        options.addPreference("extensions.enabled", false);
         return options;
     }
 
